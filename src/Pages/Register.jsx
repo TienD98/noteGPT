@@ -10,20 +10,25 @@ function Register() {
     return (
         <div style={background}>
             <div className="container  d-flex justify justify-content-center text-center align-items-center" style={{ minHeight: "100vh", width: '18rem' }}>
-                <div className="row card border border-secondary border-opacity-10" style={{ backgroundColor: '#CBF1F5' }}>
+                <div className="row border border-secondary rounded-4 border-opacity-10" style={{ backgroundColor: '#CBF1F5' }}>
                     <div className="col">
-                        <div className="card-body">
-                            <h5 className="card-title my-3">Login</h5>
-                            <div className="input-group mb-3">
+                        <form className='needs-validation' novalidate>
+                            <h5 className="card-title my-3">Register</h5>
+                            <div className="input-group mb-3 ">
                                 <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" onChange={handlerUsername} required />
                             </div>
                             <div className="input-group mb-3">
                                 <input type="password" className="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" onChange={handlerPassword} required />
                             </div>
-                            <br />
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+                                <label class="form-check-label" for="invalidCheck">
+                                    Agree to terms and conditions
+                                </label>
+                            </div>
+                            <button href="#" type='submit' className="mt-1 mb-3 bt btn btn-primary border border-primary border-opacity-10" style={{ backgroundColor: "#71C9CE" }}>Register</button>
 
-                            <button href="#" className=" btn btn-primary border border-primary border-opacity-10" style={{ backgroundColor: "#71C9CE" }}>Register</button>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
