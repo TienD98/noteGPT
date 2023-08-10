@@ -1,8 +1,6 @@
 import SigninHandler from '../Handlers/SigninHandler';
-import { useNavigate } from 'react-router-dom';
 
-function Signin() {
-    const navigate = useNavigate();
+function Register() {
     const background = {
         background: 'linear-gradient(to right, #E3FDFD, #CBF1F5, #A6E3E9, #71C9CE)',
         height: '100vh'
@@ -22,10 +20,9 @@ function Signin() {
                             <div className="input-group mb-3">
                                 <input type="password" className="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" onChange={handlerPassword} required />
                             </div>
-                            <button href="#" className="btn btn-primary border border-primary border-opacity-10" style={{ backgroundColor: "#71C9CE" }}>Sign in</button>
                             <br />
-                            <button href="#" className="mt-3 btn btn-primary border border-primary border-opacity-10" style={{ backgroundColor: "#71C9CE" }} onClick={() => navigate('/register')}>Register</button>
 
+                            <button href="#" className=" btn btn-primary border border-primary border-opacity-10" style={{ backgroundColor: "#71C9CE" }}>Register</button>
                         </div>
                     </div>
                 </div>
@@ -34,4 +31,4 @@ function Signin() {
     )
 }
 
-export default Signin
+export default Register

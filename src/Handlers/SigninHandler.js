@@ -9,11 +9,12 @@ function SigninHander() {
 
     const handlerUsername = (event) => {
         dispatch(getUser(event.currentTarget.value));
+        console.log(password);
     };
 
     const handlerPassword = (event) => {
         // dispatch(getPassword(event.currentTarget.value));
-        const hashed = passwordHash(event.currentTarget.value, 10).then((pw) => {
+        passwordHash(event.currentTarget.value, 10).then((pw) => {
             console.log(pw);
             dispatch(getPassword(pw));
         });
