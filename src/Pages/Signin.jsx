@@ -11,22 +11,22 @@ function Signin() {
 
     return (
         <div style={background}>
-            <div className="container  d-flex justify justify-content-center text-center align-items-center" style={{ minHeight: "100vh", width: '18rem' }}>
-                <div className="row card border border-secondary border-opacity-10" style={{ backgroundColor: '#CBF1F5' }}>
+            <div className="container d-flex justify justify-content-center text-center align-items-center" style={{ minHeight: "100vh", width: '18rem' }}>
+                <div className="row border rounded-4 border-secondary border-opacity-10" style={{ backgroundColor: '#CBF1F5' }}>
                     <div className="col">
-                        <div className="card-body">
+                        <form className="needs-validation" novalidate>
                             <h5 className="card-title my-3">Login</h5>
-                            <div className="input-group mb-3">
+                            <div className="mb-3">
                                 <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" onChange={handlerUsername} required />
                             </div>
-                            <div className="input-group mb-3">
+                            <div className="mb-3">
                                 <input type="password" className="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" onChange={handlerPassword} required />
                             </div>
                             <button href="#" className="btn btn-primary border border-primary border-opacity-10" style={{ backgroundColor: "#71C9CE" }}>Sign in</button>
                             <br />
-                            <button href="#" className="mt-3 btn btn-primary border border-primary border-opacity-10" style={{ backgroundColor: "#71C9CE" }} onClick={() => navigate('/register')}>Register</button>
+                            <button href="#" className="m-3 btn btn-primary border border-primary border-opacity-10" style={{ backgroundColor: "#71C9CE" }} onClick={() => navigate('/register')}>Register</button>
 
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

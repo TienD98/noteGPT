@@ -26,8 +26,7 @@ function Register() {
                                     Agree to terms and conditions
                                 </label>
                             </div>
-                            <button href="#" type='submit' className="mt-1 mb-3 bt btn btn-primary border border-primary border-opacity-10" style={{ backgroundColor: "#71C9CE" }}>Register</button>
-
+                            <button onClick={console.log('gi!')} href="#" type='submit' className="mt-1 mb-3 bt btn btn-primary border border-primary border-opacity-10" style={{ backgroundColor: "#71C9CE" }}>Register</button>
                         </form>
                     </div>
                 </div>
