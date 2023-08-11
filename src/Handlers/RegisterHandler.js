@@ -1,11 +1,9 @@
 import axios from "axios";
 import { useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
 
 function RegisterHandler() {
-    const navigate = useNavigate();
 
-    const register = (user, pass) => {
+    const register = (user, pass, nav) => {
         axios.post('https://notegpt-686471fdfc45.herokuapp.com/register', {
             username: user,
             password: pass
@@ -13,12 +11,13 @@ function RegisterHandler() {
             (res) => {
                 console.log(res.data);
                 if (res.data === 'Success register!') {
-                    navigate('/success');
+                    nav('/noteGPT/success');
+                } else if (res.data === 'user exist!') {
+                    document.getElementById('alert').classList.remove('visually-hidden');
                 }
             }
         )
             .catch((err) => {
-                document.getElementById('alert').classList.remove('visually-hidden');
                 console.log(err);
             })
     }

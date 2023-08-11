@@ -1,6 +1,9 @@
 import RegisterHandler from '../Handlers/RegisterHandler';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
+    const navigate = useNavigate();
+
     const background = {
         background: 'linear-gradient(to right, #E3FDFD, #CBF1F5, #A6E3E9, #71C9CE)',
         height: '100vh'
@@ -24,13 +27,13 @@ function Register() {
                         <div className="mb-3">
                             <input id='pass' type="password" className="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" />
                         </div>
-                        <div className="form-check">
-                            <input id='check' className="form-check-input" type="checkbox" value="checked" required />
+                        <div>
+                            <input id='check' className="form-check-input" type="checkbox" />
                             <label className="form-check-label">
                                 Agree to terms and conditions
                             </label>
                         </div>
-                        <button onClick={() => RegisterHandler().register(document.getElementById('user').value, document.getElementById('pass').value)} className="mt-1 mb-3 bt btn btn-primary border border-primary border-opacity-10" id='butt' style={{ backgroundColor: "#71C9CE" }}>Register</button>
+                        <button onClick={() => RegisterHandler().register(document.getElementById('user').value, document.getElementById('pass').value, navigate)} className="mt-1 mb-3 bt btn btn-primary border border-primary border-opacity-10" id='butt' style={{ backgroundColor: "#71C9CE" }}>Register</button>
                     </div>
                 </div>
             </div>

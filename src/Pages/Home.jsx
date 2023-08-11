@@ -21,7 +21,7 @@ function Home() {
                             </li>
                         </ul>
                         <span className="navbar-text">
-                            <button className='btn btn-dark' onClick={() => navigate('/signin')}>Sign In</button>
+                            <button className='btn btn-dark' onClick={() => navigate('/noteGPT/signin')}>Sign In</button>
                         </span>
                     </div>
                 </div>
