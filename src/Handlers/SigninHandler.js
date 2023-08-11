@@ -1,25 +1,19 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getUser, getPassword } from "../Components/Signin/SigninSlice";
 import bcrypt from 'bcryptjs';
 
 function SigninHander() {
-    // const username = useSelector((state) => state.signin.userName);
-    const password = useSelector((state) => state.signin.hashedPassword);
     const dispatch = useDispatch();
 
     const handlerUsername = (event) => {
         dispatch(getUser(event.currentTarget.value));
-        console.log(password);
     };
 
     const handlerPassword = (event) => {
         // dispatch(getPassword(event.currentTarget.value));
         passwordHash(event.currentTarget.value, 10).then((pw) => {
-            console.log(pw);
             dispatch(getPassword(pw));
         });
-        // console.log(hashed);
-        console.log(password);
     }
 
     const passwordHash = async (password, saltRounds) => {
@@ -32,7 +26,7 @@ function SigninHander() {
         }
     }
 
-    return { handlerPassword, handlerUsername }
+    return { handlerPassword, handlerUsername, }
 }
 
 export default SigninHander
