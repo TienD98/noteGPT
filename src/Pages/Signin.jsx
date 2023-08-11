@@ -1,4 +1,3 @@
-import SigninHandler from '../Handlers/SigninHandler';
 import { useNavigate } from 'react-router-dom';
 
 function Signin() {
@@ -7,7 +6,6 @@ function Signin() {
         background: 'linear-gradient(to right, #E3FDFD, #CBF1F5, #A6E3E9, #71C9CE)',
         height: '100vh'
     };
-    const { handlerUsername, handlerPassword } = SigninHandler();
 
     return (
         <div style={background}>
@@ -17,10 +15,10 @@ function Signin() {
                         <form className="needs-validation" novalidate>
                             <h5 className="card-title my-3">Login</h5>
                             <div className="mb-3">
-                                <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" onChange={handlerUsername} required />
+                                <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required />
                             </div>
                             <div className="mb-3">
-                                <input type="password" className="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" onChange={handlerPassword} required />
+                                <input type="password" className="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required />
                             </div>
                             <button href="#" className="btn btn-primary border border-primary border-opacity-10" style={{ backgroundColor: "#71C9CE" }}>Sign in</button>
                             <br />
