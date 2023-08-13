@@ -9,7 +9,6 @@ function RegisterHandler() {
             password: pass
         }).then(
             (res) => {
-                console.log(res.data);
                 if (res.data === 'Success register!') {
                     nav('/noteGPT/success');
                 } else if (res.data === 'user exist!') {
