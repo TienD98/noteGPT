@@ -1,10 +1,12 @@
-// import axios from "axios";
-// import { useEffect } from "react";
+import axios from "axios";
 
-// function SigninHandler() {
-//     useEffect(() => {
-//         axios.get('https://notegpt-686471fdfc45.herokuapp.com/welcome').then((res) => {
-//             res
-//         })
-//     })
-// }
+function SigninHandler() {
+    axios.get('https://notegpt-686471fdfc45.herokuapp.com/welcome', { withCredentials: true })
+        .then((res) => {
+            console.log(res.data);
+        }).catch((err) => {
+            console.log(err);
+        })
+}
+
+export default SigninHandler
