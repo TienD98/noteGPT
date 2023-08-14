@@ -5,7 +5,7 @@ function SigninHandler() {
         axios.post('https://notegpt-686471fdfc45.herokuapp.com/signin', {
             username: user,
             password: pass
-        }, { withCredentials: true }).then((res) => {
+        }).then((res) => {
             document.getElementById('alert').classList.add('visually-hidden');
             nav('/noteGPT/success');
             console.log(res);
