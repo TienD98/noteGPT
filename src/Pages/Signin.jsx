@@ -34,7 +34,7 @@ function Signin() {
                         {/* <br /> */}
                         {/* <button href="#" className="btn btn-primary border border-primary border-opacity-10" style={{ backgroundColor: "#71C9CE" }}>Forgot password?</button> */}
                         <br />
-                        <button href="#" className="m-2 btn btn-link " onClick={() => navigate('/noteGPT/register')}>Sign up</button>
+                        <button href="#" className="m-2 btn btn-link " onClick={() => navigate('/register')}>Sign up</button>
                     </div>
                 </div>
             </div>

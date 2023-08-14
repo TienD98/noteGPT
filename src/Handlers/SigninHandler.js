@@ -7,7 +7,7 @@ function SigninHandler() {
             password: pass
         }, { withCredentials: true }).then((res) => {
             document.getElementById('alert').classList.add('visually-hidden');
-            nav('/noteGPT/success');
+            nav('/success');
             console.log(res);
         }).catch((err) => {
             document.getElementById('alert').classList.remove('visually-hidden');
