@@ -1,8 +1,16 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function Home() {
     const navigate = useNavigate();
-
+    useEffect(() => {
+        axios.get('https://notegpt-686471fdfc45.herokuapp.com/', { withCredentials: true })
+            .then((res) => {
+                console.log(res.data);
+            }).catch((err) => {
+                console.log(err);
+            })
+    });
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
