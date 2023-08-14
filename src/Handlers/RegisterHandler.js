@@ -10,7 +10,7 @@ function RegisterHandler() {
         }).then(
             (res) => {
                 if (res.data === 'Success register!') {
-                    nav('/noteGPT/success');
+                    nav('/success');
                 } else if (res.data === 'user exist!') {
                     document.getElementById('alert').classList.remove('visually-hidden');
                 }

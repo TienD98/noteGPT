@@ -10,7 +10,7 @@ function SigninHandler() {
             { withCredentials: true })
             .then((res) => {
                 document.getElementById('alert').classList.add('visually-hidden');
-                nav('/noteGPT/success');
+                nav('/success');
                 console.log(res);
             })
             .catch((err) => {
