@@ -10,8 +10,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route exact path="/noteGPT" element={<Home />} /> */}
-        <Route path="/" element={<Home />} />
+        <Route path="/noteGPT" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
         <Route path="signin" element={<Signin />} />
         <Route path="register" element={<Register />} />
         <Route path="success" element={<SigninSuccess />} />
