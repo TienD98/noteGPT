@@ -1,23 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
-import axios from 'axios';
 
 function Home() {
     const navigate = useNavigate();
-    useEffect(() => {
-        axios.get('https://notegpt-686471fdfc45.herokuapp.com/noteGPT', { withCredentials: true })
-            .then((res) => {
-                console.log(res.data);
-            }).catch((err) => {
-                console.log(err);
-            });
-        axios.get('https://notegpt-686471fdfc45.herokuapp.com/setcookie', { withCredentials: true })
-            .then((res) => {
-                console.log(res.data);
-            }).catch((err) => {
-                console.log(err);
-            })
-    });
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
