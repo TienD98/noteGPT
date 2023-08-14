@@ -5,7 +5,7 @@ import axios from 'axios';
 function Home() {
     const navigate = useNavigate();
     useEffect(() => {
-        axios.get('https://notegpt-686471fdfc45.herokuapp.com/', { withCredentials: true })
+        axios.get('https://notegpt-686471fdfc45.herokuapp.com/noteGPT', { withCredentials: true })
             .then((res) => {
                 console.log(res.data);
             }).catch((err) => {
