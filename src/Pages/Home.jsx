@@ -10,6 +10,12 @@ function Home() {
                 console.log(res.data);
             }).catch((err) => {
                 console.log(err);
+            });
+        axios.get('https://notegpt-686471fdfc45.herokuapp.com/setcookie', { withCredentials: true })
+            .then((res) => {
+                console.log(res.data);
+            }).catch((err) => {
+                console.log(err);
             })
     });
     return (
