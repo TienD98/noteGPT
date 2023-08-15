@@ -1,6 +1,7 @@
 import axios from "axios";
 
 function SigninHandler() {
+
     const signin = (user, pass, nav) => {
         axios.post('https://notegpt-686471fdfc45.herokuapp.com/signin',
             {
@@ -9,9 +10,9 @@ function SigninHandler() {
             },
             { withCredentials: true })
             .then((res) => {
+                localStorage.setItem('authenticated', 'true');
                 document.getElementById('alert').classList.add('visually-hidden');
-                nav('/success');
-                console.log(res);
+                nav('/');
             })
             .catch((err) => {
                 document.getElementById('alert').classList.remove('visually-hidden');
