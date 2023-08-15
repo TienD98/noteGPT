@@ -1,7 +1,28 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function Home() {
     const navigate = useNavigate();
+    function disable() {
+        document.getElementById('signin').classList.remove('visually-hidden');
+        document.getElementById('login').classList.add('visually-hidden');
+    }
+    const clickLogout = () => {
+        localStorage.removeItem('authenticated');
+        disable();
+    }
+    useEffect(() => {
+        const isAuthenticated = localStorage.getItem('authenticated') === 'true';
+        if (isAuthenticated) {
+            document.getElementById('signin').classList.add('visually-hidden');
+            document.getElementById('login').classList.remove('visually-hidden');
+        } else {
+            disable();
+        }
+    }
+
+    );
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -21,6 +42,14 @@ function Home() {
                         </ul>
                         <span className="navbar-text">
                             <button id='signin' className='btn btn-dark' onClick={() => navigate('/signin')}>Sign In</button>
+                            <div className='dropstart visually-hidden' id='login'>
+                                <button className='btn dropdown-toggle' type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ width: '50px' }}><img className='img-fluid' src='src\assets\user.svg' alt="My Icon" /></button>
+                                <ul className="dropdown-menu">
+                                    <li><a className="dropdown-item" href="/success">Acount</a></li>
+                                    <li><a className="dropdown-item" href="#">Setting</a></li>
+                                    <li><a className="dropdown-item" onClick={clickLogout}>Logout</a></li>
+                                </ul>
+                            </div>
                         </span>
                         <span className="navbar-text">
                             <button id='logout' className='btn btn-dark visually-hidden' >Log out</button>

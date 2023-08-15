@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import SigninHandler from '../Handlers/SigninHandler';
+import { useEffect } from 'react';
 
 function Signin() {
     const navigate = useNavigate();
@@ -7,6 +8,16 @@ function Signin() {
         background: 'linear-gradient(to right, #E3FDFD, #CBF1F5, #A6E3E9, #71C9CE)',
         height: '100vh'
     };
+
+    useEffect(() => {
+        const isAuthenticated = localStorage.getItem('authenticated') === 'true';
+
+        console.log(isAuthenticated);
+        if (isAuthenticated) {
+            navigate('/');
+        }
+    }
+    );
 
     return (
         <div style={background}>
@@ -34,7 +45,7 @@ function Signin() {
                         {/* <br /> */}
                         {/* <button href="#" className="btn btn-primary border border-primary border-opacity-10" style={{ backgroundColor: "#71C9CE" }}>Forgot password?</button> */}
                         <br />
-                        <button href="#" className="m-2 btn btn-link " onClick={() => navigate('/noteGPT/register')}>Sign up</button>
+                        <button href="#" className="m-2 btn btn-link " onClick={() => navigate('/register')}>Sign up</button>
                     </div>
                 </div>
             </div>
