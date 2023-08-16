@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import userIcon from '../assets/user.svg';
+
 
 function Home() {
     const navigate = useNavigate();
@@ -43,7 +45,7 @@ function Home() {
                         <span className="navbar-text">
                             <button id='signin' className='btn btn-dark' onClick={() => navigate('/signin')}>Sign In</button>
                             <div className='dropstart visually-hidden' id='login'>
-                                <button className='btn dropdown-toggle' type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ width: '50px' }}><img className='img-fluid' src='src\assets\user.svg' alt="My Icon" /></button>
+                                <button className='btn dropdown-toggle' type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ width: '50px' }}><img className='img-fluid' src={userIcon} alt="My Icon" /></button>
                                 <ul className="dropdown-menu">
                                     <li><a className="dropdown-item" href="/success">Acount</a></li>
                                     <li><a className="dropdown-item" href="#">Setting</a></li>
