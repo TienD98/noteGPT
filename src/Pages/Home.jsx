@@ -47,7 +47,7 @@ function Home() {
                             <div className='dropstart visually-hidden' id='login'>
                                 <button className='btn dropdown-toggle' type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ width: '50px' }}><img className='img-fluid' src={userIcon} alt="My Icon" /></button>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="/success">Acount</a></li>
+                                    <li><a className="dropdown-item" onClick={() => navigate("/success")} >Acount</a></li>
                                     <li><a className="dropdown-item" href="#">Setting</a></li>
                                     <li><a className="dropdown-item" onClick={clickLogout}>Logout</a></li>
                                 </ul>
