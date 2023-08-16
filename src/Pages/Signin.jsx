@@ -12,7 +12,6 @@ function Signin() {
     useEffect(() => {
         const isAuthenticated = localStorage.getItem('authenticated') === 'true';
 
-        console.log(isAuthenticated);
         if (isAuthenticated) {
             navigate('/');
         }
