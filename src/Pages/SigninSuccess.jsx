@@ -10,21 +10,29 @@ function SigninSuccess() {
     useEffect(() => {
         axios.get('https://notegpt-686471fdfc45.herokuapp.com/welcome', { withCredentials: true })
             .then((res) => {
-                user.current = res.data;
+                user.current = 'hi';
             }).catch((err) => {
+                navigate('/signin');
                 console.log(err);
             });
     });
 
     const click = () => {
-        document.getElementById('user').innerHTML = "Username: " + user.current.username;
-        document.getElementById('pass').innerHTML = "Password: " + user.current.password;
-        document.getElementById('hash').innerHTML = "Hashed Password: " + user.current.hashedPassword;
+        document.getElementById('user').innerHTML = "Username: " + user.current;
+        document.getElementById('pass').innerHTML = "Password: " + user.current;
+        document.getElementById('hash').innerHTML = "Hashed Password: " + user.current;
     }
 
     const clickLogout = () => {
-        localStorage.removeItem('authenticated');
-        navigate('/');
+        axios.get('https://notegpt-686471fdfc45.herokuapp.com/logout', { withCredentials: true })
+            .then((res) => {
+                localStorage.removeItem('authenticated');
+                console.log(res.data);
+                navigate('/');
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     }
 
     return (

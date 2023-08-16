@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import userIcon from '../assets/user.svg';
+import axios from 'axios';
 
 
 function Home() {
@@ -10,8 +11,15 @@ function Home() {
         document.getElementById('login').classList.add('visually-hidden');
     }
     const clickLogout = () => {
-        localStorage.removeItem('authenticated');
-        disable();
+        axios.get('https://notegpt-686471fdfc45.herokuapp.com/logout', { withCredentials: true })
+            .then((res) => {
+                localStorage.removeItem('authenticated');
+                disable();
+                console.log(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
     useEffect(() => {
         const isAuthenticated = localStorage.getItem('authenticated') === 'true';
