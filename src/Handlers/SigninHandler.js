@@ -2,6 +2,17 @@ import axios from "axios";
 
 function SigninHandler() {
 
+    function success(nav) {
+        localStorage.setItem('authenticated', 'true');
+        document.getElementById('alert').classList.add('visually-hidden');
+        nav('/');
+    }
+
+    function fail(err) {
+        document.getElementById('alert').classList.remove('visually-hidden');
+        console.log(err)
+    }
+
     const signin = (user, pass, nav) => {
         axios.post('https://notegpt-686471fdfc45.herokuapp.com/signin',
             {
@@ -10,21 +21,28 @@ function SigninHandler() {
             },
             { withCredentials: true })
             .then((res) => {
-                localStorage.setItem('authenticated', 'true');
-                document.getElementById('alert').classList.add('visually-hidden');
-                nav('/');
+                success(nav);
             })
             .catch((err) => {
-                document.getElementById('alert').classList.remove('visually-hidden');
-                console.log(err);
+                fail(err);
             })
-
     }
 
     const onchangeInput = () => {
         document.getElementById('alert').remove('visually-hidden');
     }
-    return { signin, onchangeInput }
+
+    const clickGithub = () => {
+        axios.get('https://notegpt-686471fdfc45.herokuapp.com/auth/github')
+            .then((res) => {
+                success(nav);
+            })
+            .catch((err) => {
+                fail(err);
+            })
+    }
+
+    return { signin, onchangeInput, clickGithub }
 }
 
 export default SigninHandler;

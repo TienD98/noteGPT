@@ -1,37 +1,20 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import userIcon from '../assets/user.svg';
-import axios from 'axios';
-
+import HomeHandler from '../Handlers/HomeHandler';
 
 function Home() {
     const navigate = useNavigate();
-    function disable() {
-        document.getElementById('signin').classList.remove('visually-hidden');
-        document.getElementById('login').classList.add('visually-hidden');
-    }
-    const clickLogout = () => {
-        axios.get('https://notegpt-686471fdfc45.herokuapp.com/logout', { withCredentials: true })
-            .then((res) => {
-                localStorage.removeItem('authenticated');
-                disable();
-                console.log(res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }
+
     useEffect(() => {
         const isAuthenticated = localStorage.getItem('authenticated') === 'true';
         if (isAuthenticated) {
             document.getElementById('signin').classList.add('visually-hidden');
             document.getElementById('login').classList.remove('visually-hidden');
         } else {
-            disable();
+            HomeHandler().disable();
         }
-    }
-
-    );
+    });
 
     return (
         <div>
@@ -55,9 +38,8 @@ function Home() {
                             <div className='dropstart visually-hidden' id='login'>
                                 <button className='btn dropdown-toggle' type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ width: '50px' }}><img className='img-fluid' src={userIcon} alt="My Icon" /></button>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" onClick={() => navigate("/success")} >Acount</a></li>
                                     <li><a className="dropdown-item" href="#">Setting</a></li>
-                                    <li><a className="dropdown-item" onClick={clickLogout}>Logout</a></li>
+                                    <li><a className="dropdown-item" onClick={HomeHandler().clickLogout}>Logout</a></li>
                                 </ul>
                             </div>
                         </span>
