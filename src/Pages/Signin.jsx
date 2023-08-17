@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import SigninHandler from '../Handlers/SigninHandler';
 import { useEffect } from 'react';
+import Github from '../assets/github.svg';
 
 function Signin() {
     const navigate = useNavigate();
@@ -24,11 +25,11 @@ function Signin() {
                 <div className="row border rounded-4 border-secondary border-opacity-10" style={{ backgroundColor: '#CBF1F5' }} >
                     <div className="col">
                         <h5 className="card-title my-3">Log in to noteGPT</h5>
-                        <button className="my-2 btn btn-light border border-primary border-opacity-10" >Log in with Google</button>
+                        {/* <button className="my-2 btn btn-light border border-primary border-opacity-10" >Log in with Google</button> */}
                         <br />
-                        <button className="mb-2 btn btn-light border border-primary border-opacity-10" onClick={SigninHandler().clickGithub} >Log in with Github</button>
+                        <button className="mb-2 btn btn-light border border-primary border-opacity-10" onClick={SigninHandler().clickGithub} >Log in with Github <span><img src={Github} /></span></button>
                         <br />
-                        <button href="#" className="mb-2 btn btn-light border border-primary border-opacity-10" >Log in with Facebook</button>
+                        {/* <button href="#" className="mb-2 btn btn-light border border-primary border-opacity-10" >Log in with Facebook</button> */}
                         <hr />
                         <p>or</p>
                         <div id='alert' className="my-2 alert alert-danger p-1 visually-hidden" role="alert">

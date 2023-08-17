@@ -33,13 +33,14 @@ function SigninHandler() {
     }
 
     const clickGithub = () => {
-        axios.get('https://notegpt-686471fdfc45.herokuapp.com/auth/github')
-            .then((res) => {
-                success(nav);
-            })
-            .catch((err) => {
-                fail(err);
-            })
+        // axios.get('https://notegpt-686471fdfc45.herokuapp.com/auth/github')
+        //     .then((res) => {
+        //         success(nav);
+        //     })
+        //     .catch((err) => {
+        //         fail(err);
+        //     })
+        window.location.href = "https://notegpt-686471fdfc45.herokuapp.com/auth/github";
     }
 
     return { signin, onchangeInput, clickGithub }

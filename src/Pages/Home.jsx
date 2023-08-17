@@ -7,13 +7,7 @@ function Home() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const isAuthenticated = localStorage.getItem('authenticated') === 'true';
-        if (isAuthenticated) {
-            document.getElementById('signin').classList.add('visually-hidden');
-            document.getElementById('login').classList.remove('visually-hidden');
-        } else {
-            HomeHandler().disable();
-        }
+        HomeHandler().checkAuthenticate();
     });
 
     return (
