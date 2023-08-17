@@ -1,6 +1,6 @@
 import axios from "axios";
 
-function SigninHandler() {
+function SigninHandler(nav) {
 
     function success(nav) {
         localStorage.setItem('authenticated', 'true');
@@ -33,17 +33,19 @@ function SigninHandler() {
     }
 
     const clickGithub = () => {
-        // axios.get('https://notegpt-686471fdfc45.herokuapp.com/auth/github')
-        //     .then((res) => {
-        //         success(nav);
-        //     })
-        //     .catch((err) => {
-        //         fail(err);
-        //     })
         window.location.href = "https://notegpt-686471fdfc45.herokuapp.com/auth/github";
     }
 
-    return { signin, onchangeInput, clickGithub }
+    const checkLogin = () => {
+        axios.get('https://notegpt-686471fdfc45.herokuapp.com/validate', { withCredentials: true })
+            .then((res) => {
+                if (res.data.authenticate) {
+                    nav('/');
+                }
+            })
+    }
+
+    return { signin, onchangeInput, clickGithub, checkLogin }
 }
 
 export default SigninHandler;

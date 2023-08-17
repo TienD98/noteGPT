@@ -11,11 +11,7 @@ function Signin() {
     };
 
     useEffect(() => {
-        const isAuthenticated = localStorage.getItem('authenticated') === 'true';
-
-        if (isAuthenticated) {
-            navigate('/');
-        }
+        SigninHandler(navigate).checkLogin;
     }
     );
 

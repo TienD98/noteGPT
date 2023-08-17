@@ -20,7 +20,7 @@ function HomeHandler() {
     }
 
     const checkAuthenticate = () => {
-        axios.get('http://localhost:3000/auth/', { withCredentials: true })
+        axios.get('https://notegpt-686471fdfc45.herokuapp.com/validate', { withCredentials: true })
             .then((res) => {
                 if (res.data.authenticate) {
                     document.getElementById('signin').classList.add('visually-hidden');
