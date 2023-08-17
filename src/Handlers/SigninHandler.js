@@ -40,8 +40,10 @@ function SigninHandler(nav) {
         axios.get('https://notegpt-686471fdfc45.herokuapp.com/validate', { withCredentials: true })
             .then((res) => {
                 if (res.data.authenticate) {
+                    console.log('hi true');
                     nav('/');
                 }
+                console.log('hi false');
             })
     }
 

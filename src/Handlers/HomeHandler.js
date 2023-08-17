@@ -23,13 +23,17 @@ function HomeHandler() {
         axios.get('https://notegpt-686471fdfc45.herokuapp.com/validate', { withCredentials: true })
             .then((res) => {
                 if (res.data.authenticate) {
+                    console.log('hi true');
+                    console.log(res.data.authenticate);
                     document.getElementById('signin').classList.add('visually-hidden');
                     document.getElementById('login').classList.remove('visually-hidden');
                 } else {
+                    console.log('hi false');
                     disable();
                 }
             })
             .catch((err) => {
+                console.log('hi err');
                 console.log(err.response.data);
             })
     }

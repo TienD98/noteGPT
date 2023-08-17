@@ -11,7 +11,8 @@ function Signin() {
     };
 
     useEffect(() => {
-        SigninHandler(navigate).checkLogin;
+        console.log('hi');
+        SigninHandler(navigate).checkLogin();
     }
     );
 

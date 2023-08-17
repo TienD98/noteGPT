@@ -7,7 +7,8 @@ function Home() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        HomeHandler().checkAuthenticate;
+        console.log('hi');
+        HomeHandler().checkAuthenticate();
     });
 
     return (
