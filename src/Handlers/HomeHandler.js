@@ -19,7 +19,22 @@ function HomeHandler() {
             });
     }
 
-    return { clickLogout, disable };
+    const checkAuthenticate = () => {
+        axios.get('http://localhost:3000/auth/', { withCredentials: true })
+            .then((res) => {
+                if (res.data.authenticate) {
+                    document.getElementById('signin').classList.add('visually-hidden');
+                    document.getElementById('login').classList.remove('visually-hidden');
+                } else {
+                    disable();
+                }
+            })
+            .catch((err) => {
+                console.log(err.response.data);
+            })
+    }
+
+    return { clickLogout, disable, checkAuthenticate };
 }
 
 export default HomeHandler;
