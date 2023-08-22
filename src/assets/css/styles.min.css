@@ -303,7 +303,7 @@ h4 {
 
 .banner {
     width: 100%;
-    background: url("../img/06fdc44d-d6f9-4fad-ad12-efc6c3ede793.jpg") center/cover no-repeat;
+    background: url("/src/assets/img/mobileback.jpg") center/cover no-repeat;
     height: 50vh
 }
 
@@ -358,7 +358,7 @@ h1 {
 @media (min-width:576px) {
     .banner {
         width: 100%;
-        background: url("../img/06fdc44d-d6f9-4fad-ad12-efc6c3ede793%20(1).jpg") center/cover no-repeat;
+        background: url("/src/assets/img/desktopback.jpg") center/cover no-repeat;
         height: 100vh
     }
 

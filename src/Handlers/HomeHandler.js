@@ -3,8 +3,10 @@ import axios from "axios";
 function HomeHandler() {
 
     function disable() {
-        document.getElementById('signin').classList.remove('visually-hidden');
-        document.getElementById('login').classList.add('visually-hidden');
+        document.getElementById('signin1').classList.remove('visually-hidden');
+        document.getElementById('login1').classList.add('visually-hidden');
+        document.getElementById('signin2').classList.remove('visually-hidden');
+        document.getElementById('login2').classList.add('visually-hidden');
     }
 
     function logoFlashIn(event) {
@@ -33,8 +35,10 @@ function HomeHandler() {
                 if (res.data.authenticate) {
                     console.log('hi true');
                     console.log(res.data.authenticate);
-                    document.getElementById('signin').classList.add('visually-hidden');
-                    document.getElementById('login').classList.remove('visually-hidden');
+                    document.getElementById('signin1').classList.add('visually-hidden');
+                    document.getElementById('login1').classList.remove('visually-hidden');
+                    document.getElementById('signin2').classList.add('visually-hidden');
+                    document.getElementById('login2').classList.remove('visually-hidden');
                 } else {
                     console.log('hi false');
                     disable();

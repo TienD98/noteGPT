@@ -31,9 +31,9 @@ function Home() {
                             <li className="nav-item"><a className="nav-link active" href="#">Home</a></li>
                             <li className="nav-item"><a onClick={handleClick} className="nav-link active" href="#">Features</a></li>
                         </ul>
-                        <div className="d-md-none my-2"><button id='signin' onClick={() => navigate('/signin')} className="btn btn-primary" type="button">Sign in</button></div>
+                        <div className="d-md-none my-2 "><button id='signin1' onClick={() => navigate('/signin')} className="btn btn-primary " type="button">Sign in</button></div>
                         {/* dropdown nav */}
-                        <div className="d-md-none my-2 visually-hidden" id="login">
+                        <div className="d-md-none my-2 visually-hidden" id="login1">
                             <div className="dropdown"><a aria-expanded="false" data-bs-toggle="dropdown" href="#"><button
                                 className="btn btn-primary button-login" data-bss-hover-animate="pulse" type="button"><svg
                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em"
@@ -51,9 +51,9 @@ function Home() {
                         </div>
                     </div>
                     <div className="d-none d-md-block">
-                        <a className="btn btn-primary" role="button" id='signin' onClick={() => navigate('/signin')} >Sign in</a>
+                        <a className="btn btn-primary" role="button" id='signin2' onClick={() => navigate('/signin')} >Sign in</a>
                         {/* expand nav */}
-                        <div className="dropstart visually-hidden" id='login'>
+                        <div className="dropstart visually-hidden" id='login2'>
                             <a aria-expanded="false" data-bs-toggle="dropdown" href="#">
                                 <button className="btn btn-primary button-login" data-bss-hover-animate="pulse" type="button">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em"
@@ -95,7 +95,7 @@ function Home() {
                         <div className="col-md-12 d-flex flex-column justify-content-center align-items-start feature-top">
                             <div
                                 className="bs-icon-xl bs-icon-circle bs-icon-primary text-center flex-shrink-0 justify-content-center align-items-center icon-feature featureicon me-4 d-inline-block bs-icon xl featureicon">
-                                <img className="note" src="../assets/img/icons8-note-48.png" />
+                                <img className="note" src="../../src/assets/img/note.png" />
                             </div>
                             <h1 className="future-head"><br />Create &amp; Organize Notes</h1>
                             <p className="feature-p"><br />Design notes with unique titles and effortlessly switch between them,
@@ -108,7 +108,7 @@ function Home() {
                         <div className="col-md-12 text-end middle-feature">
                             <div
                                 className="bs-icon-xl bs-icon-circle bs-icon-primary text-center flex-shrink-0 justify-content-center align-items-center order-last ms-4 d-inline-block bs-icon xl icon-feature">
-                                <img src="../assets/img/icons8-chat-64.png" />
+                                <img src="../../src/assets/img/chat.png" />
                             </div>
                             <h1 className="future-head"><br />Intelligent Chat</h1>
                             <p className="feature-p"><br />Engage with our AI-powered chat system that brings conversation to life.
@@ -121,7 +121,7 @@ function Home() {
                         <div className="col-md-12">
                             <div
                                 className="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center me-4 d-inline-block bs-icon xl icon-feature">
-                                <img className="star" src="../assets/img/icons8-star-48.png" />
+                                <img className="star" src="../../src/assets/img/star.png" />
                             </div>
                             <h1 className="future-head"><br />Join Now</h1>
                             <p className="feature-p"><br />Sign up today to explore a world where innovation meets inspiration. Be
