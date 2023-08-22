@@ -95,7 +95,7 @@ function Home() {
                         <div className="col-md-12 d-flex flex-column justify-content-center align-items-start feature-top">
                             <div
                                 className="bs-icon-xl bs-icon-circle bs-icon-primary text-center flex-shrink-0 justify-content-center align-items-center icon-feature featureicon me-4 d-inline-block bs-icon xl featureicon">
-                                <img className="note" src="../../src/assets/img/note.png" />
+                                <img className="note" src="./src/assets/img/note.png" />
                             </div>
                             <h1 className="future-head"><br />Create &amp; Organize Notes</h1>
                             <p className="feature-p"><br />Design notes with unique titles and effortlessly switch between them,
@@ -108,7 +108,7 @@ function Home() {
                         <div className="col-md-12 text-end middle-feature">
                             <div
                                 className="bs-icon-xl bs-icon-circle bs-icon-primary text-center flex-shrink-0 justify-content-center align-items-center order-last ms-4 d-inline-block bs-icon xl icon-feature">
-                                <img src="../../src/assets/img/chat.png" />
+                                <img src="./src/assets/img/chat.png" />
                             </div>
                             <h1 className="future-head"><br />Intelligent Chat</h1>
                             <p className="feature-p"><br />Engage with our AI-powered chat system that brings conversation to life.
@@ -121,7 +121,7 @@ function Home() {
                         <div className="col-md-12">
                             <div
                                 className="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center me-4 d-inline-block bs-icon xl icon-feature">
-                                <img className="star" src="../../src/assets/img/star.png" />
+                                <img className="star" src="./src/assets/img/star.png" />
                             </div>
                             <h1 className="future-head"><br />Join Now</h1>
                             <p className="feature-p"><br />Sign up today to explore a world where innovation meets inspiration. Be
