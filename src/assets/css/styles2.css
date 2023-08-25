@@ -1,0 +1,140 @@
+.headerlink {
+  font-size: 30px;
+  color: #66fcf1;
+  --bs-primary: #66FCF1;
+  --bs-primary-rgb: 102, 252, 241;
+  font-family: Aldrich, sans-serif;
+  text-decoration: none;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.imgdiv {
+  /*z-index: 0;*/
+  /*width: 100%;*/
+  background: url("../../assets/img/tien1406_C4D_style_3D_animation_character_design_rotbot_holding_ea074607-f452-4200-9579-308e7d5d5b9d.jpg") center / cover no-repeat;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.login {
+  z-index: 2;
+  /*width: 70%;*/
+  /*height: 50vh;*/
+  /*position: absolute;*/
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+  border-radius: 25px;
+  text-align: center;
+  border-style: none;
+  border-color: rgba(33, 37, 41, 0.94);
+}
+
+h1 {
+  font-family: Aldrich, sans-serif;
+  text-align: center;
+  font-size: 30px;
+  color: #66FCF1;
+}
+
+.fas.fa-user-circle {}
+
+p {
+  color: #45A29E;
+  margin-bottom: 0px;
+  font-family: 'Albert Sans', sans-serif;
+}
+
+.btn-signin {
+  text-align: center;
+  margin-top: 25px;
+}
+
+form {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.inputuser {
+  margin-bottom: 10px;
+}
+
+.btn {
+  font-family: 'Albert Sans', sans-serif;
+}
+
+hr {
+  color: #66FCF1;
+  margin-bottom: 5px;
+}
+
+svg {
+  font-size: 25px;
+}
+
+#login {
+  padding: 0px;
+  z-index: 1;
+  background: rgba(33, 37, 41, 0.87);
+  margin-top: 30%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 1px 1px var(--bs-body-color);
+}
+
+#img {
+  padding: 0px;
+  background: url("../../assets/img/tien1406_C4D_style_3D_animation_character_design_rotbot_holding_ea074607-f452-4200-9579-308e7d5d5b9d.jpg") center / cover no-repeat;
+  height: 100vh;
+}
+
+.rowsignin {
+  width: 100%;
+  text-align: center;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 0px;
+}
+
+@media (max-width: 991px) {
+  #img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@media (min-width: 576px) {
+  #login {
+    margin-top: 30%;
+  }
+}
+
+@media (min-width: 768px) {
+  #login {
+    margin-top: 20%;
+  }
+}
+
+@media (min-width: 992px) {
+  #login {
+    margin-top: 0;
+    border-radius: 0px;
+    background-color: var(--bs-emphasis-color);
+  }
+}
+
+@media (min-width: 1200px) {
+  #login {
+    padding: 12%;
+  }
+}

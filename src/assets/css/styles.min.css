@@ -376,9 +376,9 @@ h1 {
     }
 
     .row {
-        margin-top: 20px;
-        padding-left: 50px;
-        padding-right: 50px
+        /* margin-top: 20px; */
+        /* padding-left: 50px;
+        padding-right: 50px */
     }
 }
 
@@ -393,7 +393,7 @@ h1 {
 }
 
 .row {
-    border-bottom-style: none
+    /* border-bottom-style: none */
 }
 
 .header-banner {
@@ -425,17 +425,17 @@ h1 {
     }
 
     .row {
-        margin-left: 46px;
-        margin-right: 46px;
-        padding-left: 66px;
-        padding-right: 66px
+        /* margin-left: 46px;
+        margin-right: 46px; */
+        /* padding-left: 66px;
+        padding-right: 66px */
     }
 }
 
 @media (min-width:992px) {
     .row {
-        padding-left: 143px;
-        padding-right: 143px
+        /* padding-left: 143px;
+        padding-right: 143px */
     }
 
     .feature-p {
@@ -449,8 +449,8 @@ h1 {
     }
 
     .row {
-        padding-left: 30px;
-        padding-right: 30px
+        /* padding-left: 30px;
+        padding-right: 30px */
     }
 }
 
