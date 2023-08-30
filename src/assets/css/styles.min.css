@@ -309,8 +309,6 @@ h4 {
 
 p {
     font-family: Abel, sans-serif;
-    text-align: center;
-    color: var(--bs-secondary-bg)
 }
 
 h1 {
@@ -384,7 +382,8 @@ h1 {
 
 .feature-p {
     color: var(--bs-white);
-    font-size: 19px
+    font-size: 19px;
+    text-align: center;
 }
 
 .middle-feature {
