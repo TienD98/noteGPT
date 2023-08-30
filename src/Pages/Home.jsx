@@ -2,8 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import HomeHandler from '../Handlers/HomeHandler';
 import React, { useRef } from 'react';
-import NoteIcon from '../../src/assets/img/note.png';
-// import '../assets/css/styles.min.css';
 
 function Home() {
     const navigate = useNavigate();
