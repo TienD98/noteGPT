@@ -6,7 +6,6 @@ function Signin() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        console.log('hi');
         SigninHandler(navigate).checkLogin();
     }
     );

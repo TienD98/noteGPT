@@ -40,8 +40,11 @@ function SigninHandler(nav) {
             .then((res) => {
                 if (res.data.authenticate) {
                     nav('/main');
+                    console.log(res.data.authenticate);
                 }
-                console.log('no auth');
+                else {
+                    console.log('no auth');
+                }
             })
     }
 

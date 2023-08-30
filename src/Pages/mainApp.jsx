@@ -20,7 +20,7 @@ function mainApp() {
             <div className="offcanvas offcanvas-start" tabIndex="-1" data-bs-backdrop="false" id="offcanvas-list">
                 <div className="offcanvas-header mainheadshadow" style={{ borderBottom: "1px solid black" }}>
                     <div className="dropdown"><button className="btn btn-primary dropdown-toggle usernamebutton" aria-expanded="false" data-bs-toggle="dropdown" type="button" >Username</button>
-                        <div className="dropdown-menu"><a className="dropdown-item" href="#/signin">Log out</a></div>
+                        <div className="dropdown-menu"><a onClick={MainAppHandler().clickLogout} className="dropdown-item" href="#/signin">Log out</a></div>
                     </div><a className="link-body-emphasis d-flex align-items-center me-md-auto mb-3 mb-md-0 text-decoration-none"></a>
                     <hr /><button className="btn-close" type="button" aria-label="Close" data-bs-dismiss="offcanvas"></button>
                 </div>
@@ -28,7 +28,7 @@ function mainApp() {
                     <div>
                         <hr className="my-0" />
                         <div className="list-group list-group-flush border-bottom scrollarea"><a data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap" className="list-group-item list-group-item-action py-3 lh-tight" href="#/main">
-                            <div onClick={MainAppHandler().clickLogout} className="d-flex justify-content-between align-items-center w-100"><strong className="titleNote">Add note</strong></div>
+                            <div className="d-flex justify-content-between align-items-center w-100"><strong className="titleNote">Add note</strong></div>
                         </a><a className="list-group-item list-group-item-action py-3 lh-tight" href='#/main' onClick={() => { MainAppHandler().toast('toast-1') }}>
                                 <div className="d-flex justify-content-between align-items-center w-100"><strong className="mb-1 titleNote">List group item heading</strong><i className="icon ion-android-delete" id="removeNote"></i></div>
                                 <div className="col-10 mb-1 small textMain"><p>Some placeholder content in a paragraph...</p></div>

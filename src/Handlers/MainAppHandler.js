@@ -54,7 +54,9 @@ function MainAppHandler() {
                 if (!res.data.authenticate) {
                     navigate('/signin');
                 }
-                console.log(res.data.authenticate);
+                else {
+                    console.log('auth');
+                }
             })
 
     }
