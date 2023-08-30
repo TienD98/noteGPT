@@ -5,7 +5,7 @@ function SigninHandler(nav) {
     function success(nav) {
         localStorage.setItem('authenticated', 'true');
         document.getElementById('alert').classList.add('visually-hidden');
-        nav('/');
+        nav('/main');
     }
 
     function fail(err) {
@@ -41,7 +41,7 @@ function SigninHandler(nav) {
             .then((res) => {
                 if (res.data.authenticate) {
                     console.log('hi true');
-                    nav('/#/main');
+                    nav('/main');
                 }
                 console.log('hi false');
             })
