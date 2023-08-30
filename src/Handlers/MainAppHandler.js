@@ -1,3 +1,5 @@
+import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 function MainAppHandler() {
 
@@ -37,7 +39,32 @@ function MainAppHandler() {
         })
     }
 
-    return { toast, mousehold, mouseup, mousemove }
+    const clickLogout = () => {
+        axios.get('https://notegpt-686471fdfc45.herokuapp.com/logout', { withCredentials: true })
+            .then((res) => {
+                localStorage.removeItem('authenticated');
+                Navigate('/signin');
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+
+    const checkAuthenticate = () => {
+        axios.get('https://notegpt-686471fdfc45.herokuapp.com/validate', { withCredentials: true })
+            .then((res) => {
+                if (res.data.authenticate) {
+                    console.log(res.data.authenticate);
+                } else {
+                    Navigate('/signin');
+                }
+            })
+            .catch((err) => {
+                console.log(err.response.data);
+            })
+    }
+
+    return { toast, mousehold, mouseup, mousemove, clickLogout, checkAuthenticate }
 }
 export default MainAppHandler;
 

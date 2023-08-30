@@ -3,7 +3,6 @@ import axios from "axios";
 function SigninHandler(nav) {
 
     function success(nav) {
-        localStorage.setItem('authenticated', 'true');
         document.getElementById('alert').classList.add('visually-hidden');
         nav('/main');
     }

@@ -6,7 +6,9 @@ function mainApp() {
 
     useEffect(() => {
         document.body.style.backgroundColor = 'white';
+        MainAppHandler().checkAuthenticate;
     })
+
     MainAppHandler().mouseup(isDragging, currentElement);
     MainAppHandler().mousemove(isDragging, offsetX, offsetY, currentElement);
 
@@ -24,7 +26,7 @@ function mainApp() {
                     <div>
                         <hr className="my-0" />
                         <div className="list-group list-group-flush border-bottom scrollarea"><a data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap" className="list-group-item list-group-item-action py-3 lh-tight" href="#/main">
-                            <div className="d-flex justify-content-between align-items-center w-100"><strong className="titleNote">Add note</strong></div>
+                            <div onClick={MainAppHandler().clickLogout} className="d-flex justify-content-between align-items-center w-100"><strong className="titleNote">Add note</strong></div>
                         </a><a className="list-group-item list-group-item-action py-3 lh-tight" href='#/main' onClick={() => { MainAppHandler().toast('toast-1') }}>
                                 <div className="d-flex justify-content-between align-items-center w-100"><strong className="mb-1 titleNote">List group item heading</strong><i className="icon ion-android-delete" id="removeNote"></i></div>
                                 <div className="col-10 mb-1 small textMain"><p>Some placeholder content in a paragraph...</p></div>

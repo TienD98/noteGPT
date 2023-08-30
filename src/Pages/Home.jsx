@@ -12,10 +12,6 @@ function Home() {
             section2Ref.current.scrollIntoView({ behavior: 'smooth' });
         }
     };
-    useEffect(() => {
-        console.log('hi');
-        HomeHandler().checkAuthenticate();
-    });
 
     return (
         <div>

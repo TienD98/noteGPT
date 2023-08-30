@@ -1,13 +1,4 @@
-import axios from "axios";
-
 function HomeHandler() {
-
-    function disable() {
-        document.getElementById('signin1').classList.remove('visually-hidden');
-        document.getElementById('login1').classList.add('visually-hidden');
-        document.getElementById('signin2').classList.remove('visually-hidden');
-        document.getElementById('login2').classList.add('visually-hidden');
-    }
 
     function logoFlashIn(event) {
         event.target.classList.add('animate__animated', 'animate__flash');
@@ -17,33 +8,7 @@ function HomeHandler() {
         event.target.classList.remove('animate__animated', 'animate__flash');
     }
 
-    const clickLogout = () => {
-        axios.get('https://notegpt-686471fdfc45.herokuapp.com/logout', { withCredentials: true })
-            .then((res) => {
-                localStorage.removeItem('authenticated');
-                disable();
-                console.log(res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }
-
-    const checkAuthenticate = () => {
-        axios.get('https://notegpt-686471fdfc45.herokuapp.com/validate', { withCredentials: true })
-            .then((res) => {
-                if (res.data.authenticate) {
-                    console.log(res.data.authenticate);
-                } else {
-                    disable();
-                }
-            })
-            .catch((err) => {
-                console.log(err.response.data);
-            })
-    }
-
-    return { clickLogout, disable, checkAuthenticate, logoFlashIn, logoFlashOut };
+    return { logoFlashIn, logoFlashOut };
 }
 
 export default HomeHandler;
