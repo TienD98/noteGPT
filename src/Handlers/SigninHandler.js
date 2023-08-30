@@ -41,7 +41,7 @@ function SigninHandler(nav) {
             .then((res) => {
                 if (res.data.authenticate) {
                     console.log('hi true');
-                    nav('/');
+                    nav('/#/main');
                 }
                 console.log('hi false');
             })
