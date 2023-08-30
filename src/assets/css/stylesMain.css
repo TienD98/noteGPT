@@ -1,0 +1,108 @@
+.sidebar-nav {}
+
+.chat {
+  margin-left: 200px;
+}
+
+#toast-1 {
+  position: fixed;
+  top: 40vh;
+  left: 40vh;
+}
+
+#toast-2 {
+  position: fixed;
+  top: 50vh;
+  left: 50vh;
+}
+
+.toast-header:hover {
+  cursor: grab;
+}
+
+.headerToastStyle {
+  cursor: grab;
+}
+
+.newnote-button:hover {
+  background: #45a29e;
+}
+
+.buttonMenu:hover {
+  background: #45a29e;
+}
+
+#draggableBox {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0, 194, 255, 0.18);
+  cursor: grab;
+  border-style: none;
+  border-radius: 15px;
+}
+
+.headingMain {
+  font-family: Aldrich, sans-serif;
+  color: #66FCF1;
+}
+
+.titleNote {
+  font-family: 'Albert Sans', sans-serif;
+}
+
+.textMain {
+  font-family: 'Albert Sans', sans-serif;
+}
+
+.la.la-pencil {
+  font-size: 25px;
+}
+
+.usernamebutton {
+  background: rgba(102, 252, 241, 0);
+  border-color: white;
+  color: #66FCF1;
+  padding: 0px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.detailNote {
+  font-family: 'Albert Sans', sans-serif;
+}
+
+.detailTitleNote {
+  color: #66FCF1;
+  font-family: Aldrich, sans-serif;
+}
+
+#toast-2 {
+  position: fixed;
+  top: 50vh;
+  left: 50vh;
+}
+
+.editTitle {
+  font-size: 15px;
+  padding: 2px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  visibility: none;
+}
+
+.editTitle:hover {
+  display: show;
+}
+
+#removeNote {
+  font-size: 20px;
+}
+
+#addNote {
+  font-size: 20px;
+}
