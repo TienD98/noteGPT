@@ -45,10 +45,11 @@ h1 {
   color: #66FCF1;
 }
 
-.fas.fa-user-circle {}
+.newUser {
+  color: #66FCF1;
+}
 
 p {
-  color: #45A29E;
   margin-bottom: 0px;
   font-family: 'Albert Sans', sans-serif;
 }
@@ -65,6 +66,10 @@ form {
 
 .inputuser {
   margin-bottom: 10px;
+}
+
+.text-color {
+  color: #66fcf1;
 }
 
 .btn {
