@@ -1,12 +1,14 @@
 import { useEffect, useRef } from 'react';
 import MainAppHandler from '../Handlers/MainAppHandler';
+import { useNavigate } from 'react-router-dom';
 
 function mainApp() {
     let offsetX = useRef(), offsetY = useRef(), isDragging = useRef(), currentElement = useRef();
+    const navigate = useNavigate();
 
     useEffect(() => {
         document.body.style.backgroundColor = 'white';
-        MainAppHandler().checkAuthenticate;
+        MainAppHandler().checkAuthenticate(navigate);
     })
 
     MainAppHandler().mouseup(isDragging, currentElement);

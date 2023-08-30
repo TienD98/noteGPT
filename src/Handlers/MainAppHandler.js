@@ -1,8 +1,6 @@
 import axios from "axios";
-import { Navigate } from "react-router-dom";
 
 function MainAppHandler() {
-
     function toast(name) {
         document.getElementById(name).classList.remove('hide');
         document.getElementById(name).classList.add('show');
@@ -42,26 +40,23 @@ function MainAppHandler() {
     const clickLogout = () => {
         axios.get('https://notegpt-686471fdfc45.herokuapp.com/logout', { withCredentials: true })
             .then((res) => {
-                localStorage.removeItem('authenticated');
-                Navigate('/signin');
+                console.log(res);
+                navigate('/signin');
             })
             .catch((err) => {
                 console.log(err);
             });
     }
 
-    const checkAuthenticate = () => {
+    function checkAuthenticate(navigate) {
         axios.get('https://notegpt-686471fdfc45.herokuapp.com/validate', { withCredentials: true })
             .then((res) => {
-                if (res.data.authenticate) {
-                    console.log(res.data.authenticate);
-                } else {
-                    Navigate('/signin');
+                if (!res.data.authenticate) {
+                    navigate('/signin');
                 }
+                console.log(res.data.authenticate);
             })
-            .catch((err) => {
-                console.log(err.response.data);
-            })
+
     }
 
     return { toast, mousehold, mouseup, mousemove, clickLogout, checkAuthenticate }
