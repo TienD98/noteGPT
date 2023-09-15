@@ -10,10 +10,10 @@ function MainAppHandler() {
     function mousehold(event, offsetX, offsetY, isDragging, currentElement) {
         isDragging.current = true;
         const element = event.currentTarget;
+        element.style.cursor = "grabbing";
         currentElement.current = event.currentTarget;
         offsetX.current = event.clientX - element.getBoundingClientRect().left;
         offsetY.current = event.clientY - element.getBoundingClientRect().top;
-        element.style.cursor = "grabbing";
 
     }
 
@@ -56,7 +56,6 @@ function MainAppHandler() {
                     navigate('/signin');
                 }
             })
-
     }
 
     function getUsername(user) {
@@ -70,25 +69,6 @@ function MainAppHandler() {
             })
     }
 
-    function getNote() {
-        axios.get('https://notegpt-686471fdfc45.herokuapp.com/profile/getnote', { withCredentials: true })
-            .then((res) => {
-                // console.log(res.data);
-                const container = document.createElement('div');
-
-                for (let i = 0; i < res.data.length; i++) {
-                    const id = res.data[i].id;
-                    const title = res.data[i].title;
-                    let note = res.data[i].note;
-                    if (note.length >= 40) {
-                        note = note.substring(0, 39) + '...';
-                    }
-                    container.innerHTML = `<a id="` + id + `" onclick="MainAppHandler().toast('toast` + id + `')" class="list-group-item list-group-item-action py-3 lh-tight" href="#/main"><div class="d-flex justify-content-between align-items-center w-100"><strong class="mb-1 titleNote">` + title + `</strong><i class="icon ion-android-delete" id="removeNote"></i></div><div class="col-10 mb-1 small textMain"><p>` + note + `</p></div></a>`
-                    document.getElementById('list-notes').appendChild(container.firstChild);
-                }
-            })
-    }
-
     async function getNoteArray() {
         try {
             let response = await axios.get('https://notegpt-686471fdfc45.herokuapp.com/profile/getnote', { withCredentials: true });
@@ -98,8 +78,46 @@ function MainAppHandler() {
         }
     }
 
+    async function addNote(event, newTitle, newNote, dataNode, setDataNode) {
+        event.preventDefault();
+        axios.post('https://notegpt-686471fdfc45.herokuapp.com/profile/addnote',
+            {
+                title: newTitle,
+                note: newNote
+            },
+            { withCredentials: true })
+            .then((res) => {
+                let user = {
+                    id: res.data.id,
+                    title: res.data.title,
+                    note: res.data.note
+                }
+                setDataNode([...dataNode, user]);
+                document.getElementById('alert-add-note-success').classList.remove('visually-hidden');
+                document.getElementById('addnote-button').classList.add('visually-hidden');
+            })
+            .catch((err) => {
+                console.error('error sending note request:', err);
+            })
+    }
 
-    return { getNoteArray, getNote, toast, mousehold, mouseup, mousemove, clickLogout, checkAuthenticate, getUsername }
+    function addnoteEffect() {
+        document.getElementById('alert-add-note-success').classList.add('visually-hidden');
+        document.getElementById('addnote-button').classList.remove('visually-hidden');
+
+    }
+
+    function deleteNote(noteId, setData, data) {
+        axios.delete(`https://notegpt-686471fdfc45.herokuapp.com/profile/delete/${noteId}`, { withCredentials: true })
+            .then(() => {
+                setData(data.filter(item => item.id !== noteId));
+            })
+            .catch((err) => {
+                console.error('error sending delete note request:', err);
+            })
+    }
+
+    return { deleteNote, addnoteEffect, addNote, getNoteArray, toast, mousehold, mouseup, mousemove, clickLogout, checkAuthenticate, getUsername }
 }
 export default MainAppHandler;
 window.MainAppHandler = MainAppHandler;
