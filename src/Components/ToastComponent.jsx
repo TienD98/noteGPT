@@ -18,7 +18,7 @@ function ToastComponent({ target, id, title, note, offX, offY, dragging, current
                 <button className="btn-close ms-2 mb-1 close" type="button" aria-label="Close" data-bs-dismiss="toast"></button>
             </div>
             <div className="toast-body" role="alert">
-                <textarea id={idNameTextarea} disabled className="detailNote" defaultValue={note} rows="8" cols="42" ></textarea>
+                <textarea id={idNameTextarea} disabled className="detailNote" placeholder={note} rows="8" cols="42" ></textarea>
                 <br />
                 <button data-bs-toggle="modal" data-bs-target={update} id={idNameEdit} className="btn btn-primary me-1" type="button" >Edit</button>
                 <button onClick={async () => {
