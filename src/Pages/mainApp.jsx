@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import ToastComponent from '../Components/ToastComponent';
 import NotesComponent from '../Components/NotesComponent';
 import UpdateModel from '../Components/updateModel';
+import NewChatComponent from '../Components/NewChatComponent';
+import ConversationComponent from '../Components/ConversationsComponent';
 
 function mainApp() {
     let offsetX = useRef(), offsetY = useRef(), isDragging = useRef(), currentElement = useRef(), username = useRef();
@@ -22,6 +24,9 @@ function mainApp() {
 
     return (
         <>
+            <NewChatComponent></NewChatComponent>
+            {/* <ConversationComponent></ConversationComponent> */}
+
             {/* Toast components */}
             {data ? data.map((item) => { return <ToastComponent setDataNote={setData} dataNote={data} key={item.id} id={item.id} title={item.title} note={item.note} offX={offsetX} offY={offsetY} dragging={isDragging} current={currentElement} target={item.id} /> }) : <p>loading notes</p>}
 

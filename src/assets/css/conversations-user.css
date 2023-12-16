@@ -1,0 +1,33 @@
+.conversationIconSelf {
+  height: 80px;
+  color: var(--bs-primary);
+}
+
+.conversationChatSelf {
+  color: var(--bs-primary-text-emphasis);
+  padding-top: 8px;
+}
+
+.iconGptConversation {
+  padding-top: 9px;
+  font-size: 25px;
+  color: var(--bs-primary);
+}
+
+.conversationNameGpt {
+  color: var(--bs-primary);
+}
+
+.conversationInputSelf {
+  font-family: 'Albert Sans', sans-serif;
+}
+
+.iconUserConversation {
+  font-size: 25px;
+  padding-top: 10px;
+}
+
+.conversationNameSelf {
+  color: var(--bs-body-color);
+}
+
