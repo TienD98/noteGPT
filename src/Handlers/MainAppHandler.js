@@ -117,6 +117,10 @@ function MainAppHandler() {
             })
     }
 
+    // function sendMessageButtonEffect() {
+    //     if (document.getElementById('chatInputMain').)
+    // }
+
     return { deleteNote, addnoteEffect, addNote, getNoteArray, toast, mousehold, mouseup, mousemove, clickLogout, checkAuthenticate, getUsername }
 }
 export default MainAppHandler;
