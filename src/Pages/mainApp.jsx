@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import MainAppHandler from '../Handlers/MainAppHandler';
 import { useNavigate } from 'react-router-dom';
-import ToastComponent from '../Components/ToastComponent';
-import NotesComponent from '../Components/NotesComponent';
-import UpdateModel from '../Components/updateModel';
-import NewChatComponent from '../Components/NewChatComponent';
-import ConversationComponent from '../Components/ConversationsComponent';
+import ToastComponent from '../Components/NoteComponents/ToastComponent';
+import NotesComponent from '../Components/NoteComponents/NotesComponent';
+import UpdateModel from '../Components/NoteComponents/UpdateModel';
+import NewChatComponent from '../Components/ChatComponents/NewChatComponent';
 
 function mainApp() {
     let offsetX = useRef(), offsetY = useRef(), isDragging = useRef(), currentElement = useRef(), username = useRef();
@@ -24,8 +23,8 @@ function mainApp() {
 
     return (
         <>
+            {/* ChatGPT API conversations with user */}
             <NewChatComponent></NewChatComponent>
-            {/* <ConversationComponent></ConversationComponent> */}
 
             {/* Toast components */}
             {data ? data.map((item) => { return <ToastComponent setDataNote={setData} dataNote={data} key={item.id} id={item.id} title={item.title} note={item.note} offX={offsetX} offY={offsetY} dragging={isDragging} current={currentElement} target={item.id} /> }) : <p>loading notes</p>}

@@ -1,4 +1,4 @@
-import MainAppHandler from '../Handlers/MainAppHandler';
+import MainAppHandler from '../../Handlers/MainAppHandler';
 
 function NotesComponent({ id, title, note }) {
     const idname = "toast" + id;

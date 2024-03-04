@@ -1,4 +1,4 @@
-import UpdateModelHandler from "../Handlers/UpdateModelHandler";
+import UpdateModelHandler from "../../Handlers/UpdateModelHandler";
 
 function UpdateModel({ idNote, noteUpdate, dataNote, setDataNote }) {
     const idName = "updateNote" + idNote;
@@ -41,7 +41,6 @@ function UpdateModel({ idNote, noteUpdate, dataNote, setDataNote }) {
             </div>
         </div>
     )
-    //{(event) => UpdateModelHandler().updateNote(event, idButtonName, idNote, document.getElementById(idTextareaName).value)}
 }
 
 export default UpdateModel;

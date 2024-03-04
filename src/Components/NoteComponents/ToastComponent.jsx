@@ -1,4 +1,4 @@
-import MainAppHandler from '../Handlers/MainAppHandler';
+import MainAppHandler from '../../Handlers/MainAppHandler';
 
 function ToastComponent({ target, id, title, note, offX, offY, dragging, current, setDataNote, dataNote }) {
     const idNameEdit = "edit" + id;
@@ -12,7 +12,7 @@ function ToastComponent({ target, id, title, note, offX, offY, dragging, current
             data-bs-animation="false"
             data-bs-autohide="false"
             id={"toast" + id}
-            style={{ position: "fixed", left: "400px", top: "0px" }}>
+            style={{ position: "fixed", left: "400px", top: "100px" }}>
             <div className="toast-header">
                 <strong className="me-auto detailTitleNote">{title}</strong>
                 <button className="btn-close ms-2 mb-1 close" type="button" aria-label="Close" data-bs-dismiss="toast"></button>

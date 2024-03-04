@@ -117,9 +117,9 @@ function MainAppHandler() {
             })
     }
 
-    // function sendMessageButtonEffect() {
-    //     if (document.getElementById('chatInputMain').)
-    // }
+    function quickSuggestQuestion(question) {
+
+    }
 
     return { deleteNote, addnoteEffect, addNote, getNoteArray, toast, mousehold, mouseup, mousemove, clickLogout, checkAuthenticate, getUsername }
 }
